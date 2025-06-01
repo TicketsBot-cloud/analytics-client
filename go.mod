@@ -1,4 +1,4 @@
-module github.com/TicketsBot/analytics-client
+module github.com/TicketsBot-cloud/analytics-client
 
 go 1.18
 

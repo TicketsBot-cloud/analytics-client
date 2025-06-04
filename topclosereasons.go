@@ -68,7 +68,7 @@ func (c *Client) GetTopCloseReasonsContaining(context context.Context, guildId u
 	query := `
 SELECT close_reason
 FROM analytics.top_close_reasons
-WHERE guild_id = $1 AND panel_id = $2 AND LOWER(close_reason) '%' || LIKE LOWER($3) || '%'
+WHERE guild_id = $1 AND panel_id = $2 AND LOWER(close_reason) LIKE '%' || LOWER($3) || '%'
 ORDER BY CASE WHEN LOWER(close_reason) LIKE LOWER($3) || '%' THEN 0 ELSE 1 END,
 ranking ASC
 LIMIT 10`
